@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import api from '@/lib/api';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -69,6 +70,15 @@ export default function LoginPage() {
             Sign in
           </button>
         </form>
+
+        <div className="text-center pt-2">
+          <p className="text-sm text-slate-500">
+            Don't have an account?{' '}
+            <Link href="/register" className="text-blue-400 hover:text-blue-300 font-semibold underline underline-offset-4">
+              Create one
+            </Link>
+          </p>
+        </div>
       </motion.div>
     </div>
   );
